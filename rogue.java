@@ -1,12 +1,17 @@
 package javaOOP.units;
 
+import java.util.ArrayList;
+
 public class rogue extends units {
 
-    public rogue() {
-        super(85, 30, 15, 5, 0, "rouge" );      
+    public rogue(String name, int x, int y) {
+        super(20,90, name, "male", x, y);
     }
-    public rogue(String name) {
-        super(85, 30, 15, 5, 0, name );      
+
+    @Override
+    public void step(ArrayList<units> units, ArrayList<units> team) {
+        units tmp = nearest(units);
+        System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
     }
 }
 

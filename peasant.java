@@ -1,11 +1,16 @@
 package javaOOP.units;
 
+import java.util.ArrayList;
+
 public class peasant extends units {
 
-    public peasant() {
-        super(80, 10, 30, 4, 0, "peasant");
+    public peasant(String name, int x, int y) {
+        super(30,100, name, "male", x, y);
     }
-    public peasant(String name) {
-        super(80, 10, 30, 4, 0, name);
+
+    @Override
+    public void step(ArrayList<units> units, ArrayList<units> team) {
+        units tmp = nearest(units);
+        System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
     }
 }

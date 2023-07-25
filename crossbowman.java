@@ -1,12 +1,15 @@
 package javaOOP.units;
 
-public class crossbowman extends units{
+import java.util.ArrayList;
 
-    public crossbowman() {
-        super(80, 10, 20, 3,0,"Crossbowman");
-       
+public class crossbowman extends units {
+
+    public crossbowman(String name, int x, int y) {
+        super(30,70, name, "male", x, y);
     }
-    public crossbowman(String name) {
-        super(80, 10, 20, 3, 0, name);
+    @Override
+    public void step(ArrayList<units> units, ArrayList<units> team) {
+        units tmp = nearest(units);
+        System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
     }
 }
