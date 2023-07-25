@@ -3,7 +3,7 @@ package javaOOP.units;
 import java.util.ArrayList;
 
 public abstract class Shooter extends units {
-    protected int arrows = 50;
+    protected int arrows = 20;
 
     public Shooter(int damage, int hp, String name, String sex, int x, int y) {
         super(damage, hp, name, sex, x, y);
@@ -17,7 +17,7 @@ public abstract class Shooter extends units {
         // Найти ближайшего противника
         units tmp = nearest(units);
         // Нанести ему среднее повреждение
-        System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
+        //System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
 
         for (units unit:team) {
             if (unit.name.equals("crossbowman")) {

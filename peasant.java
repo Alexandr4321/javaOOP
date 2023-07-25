@@ -11,6 +11,7 @@ public class peasant extends units {
     @Override
     public void step(ArrayList<units> units, ArrayList<units> team) {
         units tmp = nearest(units);
-        System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
+        //System.out.println(tmp.name+" " +coordinates.countDistance(tmp.coordinates));
+        tmp.HP_damage(damage);
     }
 }

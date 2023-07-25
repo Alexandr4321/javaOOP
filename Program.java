@@ -20,10 +20,10 @@ public class Program {
         System.out.println();
         System.out.println("Your Team1:");
         int teamCount = 3;
-        Random rand = new Random();
+        //Random rand = new Random();
         ArrayList<units> team1 = new ArrayList<>();
         for (int i = 0; i < teamCount; i++) {
-            int val = rand.nextInt(teamCount);
+            int val = i; //rand.nextInt(teamCount);
             switch (val) {
                 case 0:
                     team1.add(new magician(Names.magician.getName(), 0, val + 1));
@@ -39,7 +39,7 @@ public class Program {
         }
         ArrayList<units> team2 = new ArrayList<>();
         for (int i = 0; i < teamCount; i++) {
-            int val = rand.nextInt(teamCount);
+            int val =i; //rand.nextInt(teamCount);
             switch (val) {
                 case 0:
                     team2.add(new crossbowman(Names.crossbowman.getName(), 5, val+1));
@@ -56,19 +56,19 @@ public class Program {
         }
         // System.out.println("The nearest: ");
 
-        System.out.println("Team1: ");
+        System.out.println("Team1-------------: ");
         team1.forEach(n-> System.out.println(n.getInfo()));
 
-        System.out.println("Team2: ");
+        System.out.println("Team2-------------: ");
         team2.forEach(n-> System.out.println(n.getInfo()));
 
         team1.forEach(n-> n.step(team2, team1));
         team2.forEach(n-> n.step(team1, team2));
 
-        System.out.println("Team1 урон: ");
+        System.out.println("Team1 урон-------------: ");
         team1.forEach(n-> System.out.println(n.getInfo()));
 
-        System.out.println("Team2 урон: ");
+        System.out.println("Team2 урон-------------: ");
         team2.forEach(n-> System.out.println(n.getInfo()));
     }
     
