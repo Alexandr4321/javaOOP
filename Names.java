@@ -1,5 +1,5 @@
-package javaOOP.units;
-import javaOOP.units.crossbowman;
+package units;
+import units.crossbowman;
 public enum Names {
 
     crossbowman("crossbowman"), 

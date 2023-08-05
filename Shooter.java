@@ -1,12 +1,12 @@
-package javaOOP.units;
+package units;
 
 import java.util.ArrayList;
 
 public abstract class Shooter extends units {
     protected int arrows = 20;
 
-    public Shooter(int damage, int hp, String name, String sex, int x, int y) {
-        super(damage, hp, name, sex, x, y);
+    public Shooter(int damage, int hp, String name, String sex, int x, int y, boolean isAlive, int initiative, int attacRange) {
+        super(damage, hp, name, sex, x, y, isAlive, initiative, attacRange);
     }
 
     @Override
@@ -25,9 +25,19 @@ public abstract class Shooter extends units {
                 break;
             }
         }
-        tmp.HP_damage(this.damage);
+        if(!isAlive)return;
+        if(coordinates.countDistance(tmp.coordinates)<=attacRange){
+            tmp.getDamage(damage);
+        }else{
+            move(tmp.coordinates, team);
+        }
         // уменьшить кол-во стрел на одну и вернуть управление
         arrows -= 1;
+        for(units unit : team){
+            if(unit instanceof peasant&& unit.state=="Stand")
+                unit.state="Busy";
+                arrows+=1;
+        }
         return;
     }
 
