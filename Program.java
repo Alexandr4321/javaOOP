@@ -119,14 +119,18 @@ public class Program {
                 if (isTeamDie(team2)) {
                     message = "Team 1 win!";
                     break;
-                    }  if (isTeamDie(team1)) {
-                            message = "Team 2 win!";
-                            break;
-                            }
-                            if (message.equals("Team 2 win!")|| message.equals("Team 1 win")) {
-                                System.out.println(message);
-                                break;
-                } 
+                    
+                    }
+                if (isTeamDie(team1)) {
+                    message = "Team 2 win!";
+                    break;
+                            
+                    }
+                
+            // if (message.equals("Team 2 win!")|| message.equals("Team 1 win")) {
+            //     System.out.println(message);
+            //     break;
+            //     } 
                 
                 if ((tmpTeam1.initiative >= tmpTeam2.initiative && init1 < 10) || (tmpTeam1.initiative < tmpTeam2.initiative && init2 == 10)) {
                     tmpTeam1.step(team2, team1);
@@ -139,13 +143,13 @@ public class Program {
                 }
                 
             }
-
+            if ( message.equals("Team 1 win!")||message.equals("Team 2 win!") ) {
+                System.out.println(message);
+                break;
+            }
             View.view();
 
-            // if ( message.equals("Team 1 win")||message.equals("Team 2 win!") ) {
-            //     System.out.println(message);
-            //     break;
-            // }
+
             
         }
     }
